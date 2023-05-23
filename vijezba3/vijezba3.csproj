@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClasses.cs" />
+    <Compile Include="Encapsulation.cs" />
+    <Compile Include="inheritance.cs" />
+    <Compile Include="interface.cs" />
+    <Compile Include="MultipleClassDeclaration.cs" />
+    <Compile Include="polymorphism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

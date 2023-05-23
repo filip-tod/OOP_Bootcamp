@@ -23,9 +23,10 @@ namespace OOP_Task
         }
 
         //poziv za ispisivanje apstraktne metode
-        public abstract void IspisInfo();
+        public abstract void IspisiInformacije();
+    }
 
-        public class Dog : Animal
+    public class Dog : Animal
         {
             public string Breed { get; set; }
             public Dog(string name, int age, bool extinct, string breed) : base(name, age, extinct)
@@ -33,18 +34,19 @@ namespace OOP_Task
                 Breed = breed;
             }
 
-            public override void IspisInfo()
-            {
-                Console.WriteLine($"Pas - Ime: {Name}, Godine: {Age}, Da li je živ: {Extinct} ,Pasmina: {Breed}");
-            }
-        }
-
+             public override void IspisiInformacije()
+             {
+                Console.WriteLine($"Pas - Ime: {Name}, Godine: {Age}, Dali je vrsta životinje izumrla: {Extinct} ,Pasmina: {Breed}");
+             }
         //Metoda specifična za pse
         public void Barking()
         {
             Console.WriteLine("Wuuf, Wuuf!");
         }
     }
+
+       
+    
 
     public class Mammoth : Animal
     {
@@ -55,9 +57,9 @@ namespace OOP_Task
             Color = color;
         }
         // Implementacija apstraktne metode IspisiInformacije()
-        public override void IspisInfo()
+        public override void IspisiInformacije()
         {
-            Console.WriteLine($"mammoth - Ime: {Name}, Godine: {Age}, Boja: {Color}, Izumrla: {Extinct}");
+            Console.WriteLine($"mammoth - Ime: {Name}, Godine: {Age}, Boja: {Color}, Dali je vrsta životinje izumrla: {Extinct}");
         }
         // Metoda specifična za mamute
         public void glasanjeSlona()
@@ -72,12 +74,13 @@ namespace OOP_Task
         static void Main(string[] args)
         {
             // Kreiramo objekte pas i mammoth
-            Dog dog = new dog("Rex", 5, false ,"Njemački ovčar");
-            Mammoth mammoth = new mammoth("Roki",20,"Mamut", "Brown", true);
+            //neznam kako dohvatiti stare objekte i smjestit ih u novi
+            Dog dog  = new Dog("Rex", 5, false ,"German Shepard");
+            Mammoth mammoth = new Mammoth("Pumba",20,"Brown",  true);
 
             // Ispisujemo informacije o životinjama koristeći polimorfizam
-            dog.IspisInfo();
-            mammoth.IspisInfo();
+            dog.IspisiInformacije();
+            mammoth.IspisiInformacije();
 
             // Pozivamo metode specifične za pas i mačku
             dog.Barking();
